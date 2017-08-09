@@ -7,6 +7,7 @@ function validarCPF($cpf = null) {
      * Nome: Deinar Bottamedi
      * Data: 14/05/2014
      * Faz a validacao do CPF
+     * Retorna 'true' ou 'false'
      */
 
     // Verifica se foi digitado algo
@@ -18,12 +19,12 @@ function validarCPF($cpf = null) {
     $cpf = ereg_replace('[^0-9]', '', $cpf);
     $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
 
-    // Verifica se o numero de digitos informados é igual a 11
+    // Verifica se o numero de digitos informados Ã© igual a 11
     if (strlen($cpf) != 11) {
         return false;
     }
 
-    // Verifica se nenhuma das sequências invalidas abaixo foi digitada
+    // Verifica se nenhuma das sequÃªncias invalidas abaixo foi digitada
     else if ($cpf == '00000000000' ||
             $cpf == '11111111111' ||
             $cpf == '22222222222' ||
